@@ -25,9 +25,6 @@ public class User {
                 '}';
     }
 
-    /**
-     * 无参构造函数
-     */
     public User() {
         this.address = "America";
         this.sex = "女";
