@@ -7,7 +7,7 @@ import study.eamon.po.User;
 
 /**
  * @Author: Eamon
- * @Description:
+ * @Description: 注解实现操作user
  * @Date: 2020/11/30 11:04
  */
 public interface AnnotationUserMapper {
