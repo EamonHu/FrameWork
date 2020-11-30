@@ -27,7 +27,7 @@ public class User {
 
     public User() {
         this.address = "America";
-        this.sex = "男";
+        this.sex = "女";
     }
 
     public int getId() {
