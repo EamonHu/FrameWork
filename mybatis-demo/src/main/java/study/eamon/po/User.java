@@ -34,6 +34,7 @@ public class User {
         return id;
     }
 
+    // 设置ID
     public void setId(int id) {
         this.id = id;
     }
