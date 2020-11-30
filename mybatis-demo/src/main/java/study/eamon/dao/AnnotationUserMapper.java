@@ -11,7 +11,6 @@ import study.eamon.po.User;
  * @Date: 2020/11/30 11:04
  */
 public interface AnnotationUserMapper {
-
     /**
      * 通过用户ID查询用户信息
      * @param id 用户ID
