@@ -1,6 +1,5 @@
 import cn.eamon.mybatis.dao.AnnotationNote;
 import cn.eamon.mybatis.dao.AnnotationPic;
-import cn.eamon.mybatis.dao.AnnotationUser;
 import cn.eamon.mybatis.po.*;
 import com.alibaba.fastjson.JSON;
 import org.apache.ibatis.io.Resources;
@@ -11,8 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
-import java.lang.annotation.Annotation;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
