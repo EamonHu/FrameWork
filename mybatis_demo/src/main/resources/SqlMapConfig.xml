@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties  resource="db.properties"></properties>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}" />
+                <property name="url" value="${db.url}" />
+                <property name="username" value="${db.username}" />
+                <property name="password" value="${db.password}" />
+            </dataSource>
+        </environment>
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}" />
+                <property name="url" value="${db.url}" />
+                <property name="username" value="${db.username}" />
+                <property name="password" value="${db.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- 1.使用相对于类路径的资源
+            注意在resources下新建的层级文件夹
+         -->
+        <!--<mapper resource="cn/eamon/mybatis/dao/UserDao.xml" />-->
+
+        <!-- 2.使用绝对路径加载资源 -->
+<!--        <mapper url="file:///F:/Code/Framework/mybatis_demo/src/main/resources/cn/eamon/mybatis/dao/UserDao.xml" />-->
+
+        <!-- 3.使用mapper接口类路径，加载映射文件
+            要求mapper接口名称和mapper映射文件名称相同，且在同一个目录中
+         -->
+<!--        <mapper class="cn.eamon.mybatis.dao.UserDao" />-->
+
+        <!-- 4.指定包下所有mapper接口，来加载映射文件 -->
+        <package name="cn.eamon.mybatis.dao"/>
+    </mappers>
+</configuration>
