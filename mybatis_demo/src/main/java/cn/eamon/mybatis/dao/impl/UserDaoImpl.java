@@ -21,21 +21,20 @@ public class UserDaoImpl implements UserDao {
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
-    public User findUserById(int id) throws Exception {
+    public User findUserById(int id){
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = null;
+        User user;
         try{
             user = sqlSession.selectOne("cn.eamon.mybatis.dao.UserDao.findUserById", id);
-            System.out.println(user);
         }finally {
             sqlSession.close();
         }
         return user;
     }
 
-    public List<User> findUsersByName(String name) throws Exception {
+    public List<User> findUsersByName(String name){
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        List<User> users = null;
+        List<User> users;
         try{
             users = sqlSession.selectList("cn.eamon.mybatis.dao.UserDao.findUsersByName", name);
             System.out.println(users);
