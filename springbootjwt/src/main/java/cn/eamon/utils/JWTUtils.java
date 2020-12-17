@@ -21,15 +21,12 @@ public class JWTUtils {
      * 生成token  header.payload.sing
      */
     public static String getToken(Map<String,String> map){
-
-        Calendar instance = Calendar.getInstance();
         //默认7天过期
+        Calendar instance = Calendar.getInstance();
         instance.add(Calendar.DATE,7);
-
         //创建jwt builder
         JWTCreator.Builder builder = JWT.create();
-
-        //payload
+        //设置payload
         map.forEach(builder::withClaim);
         //指定令牌过期时间
         return builder.withExpiresAt(instance.getTime())
