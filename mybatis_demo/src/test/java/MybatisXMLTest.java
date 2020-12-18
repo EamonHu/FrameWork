@@ -21,9 +21,8 @@ public class MybatisXMLTest {
 
     @Before
     public void init() throws Exception{
-        SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
         InputStream inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
-        sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
     @Test

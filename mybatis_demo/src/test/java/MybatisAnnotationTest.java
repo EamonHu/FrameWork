@@ -20,15 +20,19 @@ public class MybatisAnnotationTest {
 
     @Before
     public void init() throws Exception{
-        SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
+        // 1. 获取配置文件的流文件
         InputStream inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
-        sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
+        // 2. 获取SqlSessionFactory
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
     @Test
     public void testFindUserById(){
+        // 3.获取sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
+        // 4.操作Mapper接口
         AnnotationUser mapper = sqlSession.getMapper(AnnotationUser.class);
+        // 5.代理对象执行findUserById
         User user = mapper.findUserById(1);
         System.out.println(user);
     }

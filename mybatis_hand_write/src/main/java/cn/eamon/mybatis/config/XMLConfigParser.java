@@ -1,9 +1,12 @@
 package cn.eamon.mybatis.config;
 
 import cn.eamon.mybatis.core.Constant;
+import cn.eamon.mybatis.utils.DocumentUtils;
 import org.apache.commons.dbcp.BasicDataSource;
+import org.dom4j.Document;
 import org.dom4j.Element;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
@@ -26,7 +29,23 @@ public class XMLConfigParser {
         return configuration;
     }
 
-    private void parseMappers(Element mappers) {
+    private void parseMappers(Element element) {
+        List<Element> elements = element.elements("mapper");
+        for (Element mapperElement : elements) {
+            parseMapper(mapperElement);
+        }
+    }
+
+    private void parseMapper(Element mapperElement) {
+        // 获取映射文件的路径
+        String resource = mapperElement.attributeValue("resource");
+        // 获取指定路径的IO流
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        // 获取映射文件对应的Document对象
+        Document document = DocumentUtils.readDocument(inputStream);
+        // 按照mapper标签语义去解析Document
+        XMLMapperParser mapperParser = new XMLMapperParser(configuration);
+        mapperParser.parse(document.getRootElement());
     }
 
     private void parseEnvironments(Element element) {
