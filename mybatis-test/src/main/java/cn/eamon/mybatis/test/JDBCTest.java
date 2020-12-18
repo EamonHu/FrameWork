@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 /**
  * @Author: Eamon
  * @Description:
@@ -42,7 +43,7 @@ public class JDBCTest {
 
             // 遍历查询结果集
             while (rs.next()) {
-                System.out.println(rs.getString("id") + " " + rs.getString("username") + " "+rs.getString("address"));
+                System.out.println(rs.getString("id") + " " + rs.getString("username") + " " + rs.getString("address"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,5 +72,4 @@ public class JDBCTest {
             }
         }
     }
-
 }
