@@ -12,6 +12,7 @@
         <module>mybatis-test</module>
         <module>mybatis_hand_write</module>
         <module>mybatis_demo</module>
+        <module>spring_demo</module>
     </modules>
 
 
