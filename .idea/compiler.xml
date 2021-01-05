@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring_demo" />
-        <module name="mybatis_demo" />
+        <module name="spring_demo_aop" />
         <module name="springbootjwt" />
         <module name="mybatis_hand_write" />
         <module name="mybatis-test" />
+        <module name="spring_mybatis" />
+        <module name="spring_demo_ioc" />
+        <module name="mybatis_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

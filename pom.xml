@@ -12,7 +12,9 @@
         <module>mybatis-test</module>
         <module>mybatis_hand_write</module>
         <module>mybatis_demo</module>
-        <module>spring_demo</module>
+        <module>spring_demo_aop</module>
+        <module>spring_demo_ioc</module>
+        <module>spring_mybatis</module>
     </modules>
 
 

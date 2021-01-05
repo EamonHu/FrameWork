@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 注入bean -->
+    <bean id="userService" class="cn.eamon.service.impl.UserServiceImpl"/>
+    <bean id="beforeLog" class="cn.eamon.log.BeforeLog"/>
+    <bean id="afterLog" class="cn.eamon.log.AfterLog"/>
+
+    <!-- 方式一：使用原生的SpringAPI接口 -->
+    <!-- 配置aop:需要倒入aop约束 -->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 切入点:expression表达式 execution&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* cn.eamon.service.impl.*.*(..))"/>-->
+<!--        &lt;!&ndash; 执行环绕增加 &ndash;&gt;-->
+<!--        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>-->
+
+    <!-- 方式二：自定义类 -->
+<!--    <bean id="diy" class="cn.eamon.diy.DiyPointCut"/>-->
+
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="diy">-->
+<!--            &lt;!&ndash; 切入点 &ndash;&gt;-->
+<!--            <aop:pointcut id="point" expression="execution(* cn.eamon.service.impl.*.*(..))"/>-->
+<!--            &lt;!&ndash; 通知 &ndash;&gt;-->
+<!--            <aop:before method="before" pointcut-ref="point"/>-->
+<!--            <aop:after method="after" pointcut-ref="point"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+    <!-- 方式三：直接方式实现aop -->
+    <bean id="annotationPointcut" class="cn.eamon.diy.AnnotationPointcut"/>
+    <!-- 开启注解支持-->
+    <aop:aspectj-autoproxy/>
+</beans>
