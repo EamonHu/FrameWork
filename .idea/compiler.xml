@@ -11,9 +11,11 @@
         <module name="springbootjwt" />
         <module name="mybatis_hand_write" />
         <module name="mybatis-test" />
+        <module name="springmvc02-hellomvc" />
         <module name="spring_mybatis" />
         <module name="spring_demo_ioc" />
         <module name="mybatis_demo" />
+        <module name="springmvc01_servlet" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

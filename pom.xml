@@ -15,6 +15,7 @@
         <module>spring_demo_aop</module>
         <module>spring_demo_ioc</module>
         <module>spring_mybatis</module>
+        <module>springmvc</module>
     </modules>
 
 
