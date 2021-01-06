@@ -16,6 +16,7 @@
         <module>spring_demo_ioc</module>
         <module>spring_mybatis</module>
         <module>springmvc</module>
+        <module>ssm_build</module>
     </modules>
 
 
