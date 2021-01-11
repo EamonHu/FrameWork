@@ -18,6 +18,4 @@
         <module>springmvc</module>
         <module>ssm_build</module>
     </modules>
-
-
 </project>
