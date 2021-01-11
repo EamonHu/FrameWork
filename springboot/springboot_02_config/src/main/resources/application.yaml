@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+
+person:
+  name: EamonHu
+  age: 3
+  happy: true
+  birth: 2000/01/01
+  maps: {k1: hello,k2: 你好}
+  lists:
+    - code
+    - girl
+    - music
+  dog:
+    name: 旺财
+    age: 1
